@@ -159,7 +159,7 @@ export const forgotPassword = async (req, res) => {
     const resetTokenExpiresAt = Date.now() + 1 * 60 * 60 * 1000; //1 hours
 
     user.resetPasswordToken = resetToken;
-    user.resetPasswordTokenExpiresAt = resetTokenExpiresAt;
+    user.resetPasswordExpiresAt = resetTokenExpiresAt;
 
     await user.save();
 
@@ -211,3 +211,4 @@ export const resetPassword = async (req, res) => {
     res.status(400).json({ success: false, message: error.message });
   }
 };
+
