@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import FloatingShape from "./components/FloatingShape";
 
 import SignUp from "./Pages/SignUp";
 import Login from "./Pages/Login";
@@ -50,7 +51,8 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden">
-      <Router> {/* Wrap the entire app in the Router */}
+      <FloatingShape />
+      <Router>
         <Routes>
           <Route
             path="/"
