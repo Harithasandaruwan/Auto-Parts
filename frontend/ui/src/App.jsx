@@ -9,6 +9,7 @@ import ForgotPasswordPage from "./Pages/ForgotPasswordPage";
 import ResetPasswordPage from "./Pages/ResetPasswordPage";
 
 import LoadingSpinner from "./Components/LoadingSpinner";
+import NavBar from "./Components/NavBar";
 
 import { Toaster } from "react-hot-toast";
 import { useAuthStore } from "./store/authStore";
@@ -58,6 +59,7 @@ function App() {
             path="/"
             element={
               <ProtectedRoute>
+                <NavBar />
                 <Home />
               </ProtectedRoute>
             }
