@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 
 const adminSchema = new mongoose.Schema({
 
+    email: {
+        type: String,
+        required: true
+    },
+
     partName: {
         type: String,
         required: true
@@ -47,6 +52,9 @@ const adminSchema = new mongoose.Schema({
         required: true
     },
 
-}, {timestamps: true});
+}, { timestamps: true });
+
+// Add a compound index to enforce unique email and partName per user
+adminSchema.index({ email: 1, partName: 1 }, { unique: true });
 
 export const Admin = mongoose.model('Admin', adminSchema);
